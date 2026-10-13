@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1d6b35">
+  <title>BodegaMX | Empleo y Crédito</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="BodegaMX inicio">
+      <span class="brand-icon" aria-hidden="true">📦</span>
+      <span>BodegaMX</span>
+    </a>
+    <a class="header-cta" href="#servicios">Ver servicios</a>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <p class="eyebrow">OPORTUNIDADES Y SOLUCIONES</p>
+      <h1>Bienvenido a <span>BodegaMX</span></h1>
+      <p class="hero-copy">Conoce nuestros servicios de empleo y crédito desde un mismo lugar.</p>
+
+      <div class="salary-card">
+        <p class="card-label">OPORTUNIDAD LABORAL</p>
+        <p class="salary-amount">$4.000 pesos</p>
+        <p class="card-foot">Ingreso semanal indicado en la oferta de referencia. Confirma las condiciones antes de postularte.</p>
+      </div>
+
+      <p class="prompt">¿Qué servicio estás buscando?</p>
+      <a class="down-arrow" href="#servicios" aria-label="Ver servicios">↓</a>
+    </section>
+
+    <section class="services section-wrap" id="servicios">
+      <h2>Elige tu servicio</h2>
+      <p class="section-intro">Selecciona una opción para conocer los detalles y continuar.</p>
+
+      <div class="service-grid">
+        <article class="service-card employment">
+          <div class="service-icon" aria-hidden="true">📦</div>
+          <h3>Empleo</h3>
+          <p>Consulta la información de la oportunidad laboral y completa una solicitud de postulación.</p>
+          <ul>
+            <li>Información del puesto</li>
+            <li>Formulario de postulación</li>
+            <li>Revisión de datos antes de enviar</li>
+          </ul>
+          <button class="primary-button" type="button" data-open="empleo">Solicitar empleo</button>
+        </article>
+
+        <article class="service-card credit">
+          <div class="service-icon" aria-hidden="true">💰</div>
+          <h3>Crédito</h3>
+          <p>Indica qué cantidad te interesa para consultar las opciones disponibles.</p>
+          <ul>
+            <li>Solicitud de información</li>
+            <li>Importe de interés</li>
+            <li>Evaluación sujeta a condiciones</li>
+          </ul>
+          <button class="primary-button" type="button" data-open="credito">Solicitar crédito</button>
+        </article>
+      </div>
+      <p class="security-note">Importante: no compartas contraseñas, códigos de verificación ni datos completos de tarjetas. Verifica siempre la identidad de quien ofrece un empleo o crédito. La aprobación de un crédito o la contratación laboral no están garantizadas.</p>
+    </section>
+
+    <section class="form-section" id="formulario" hidden>
+      <div class="form-panel">
+        <button class="back-button" id="volver" type="button">← Volver a servicios</button>
+        <p class="eyebrow" id="form-eyebrow">SOLICITUD</p>
+        <h2 id="form-title">Formulario</h2>
+        <p id="form-description" class="section-intro"></p>
+
+        <form id="solicitud-form">
+          <input type="hidden" id="tipo-servicio" name="tipo-servicio">
+          <div class="field-grid">
+            <label>Nombre completo
+              <input name="nombre" autocomplete="name" required maxlength="100" placeholder="Escribe tu nombre">
+            </label>
+            <label>Correo electrónico
+              <input name="correo" type="email" autocomplete="email" required placeholder="nombre@correo.com">
+            </label>
+            <label>Teléfono de contacto
+              <input name="telefono" type="tel" autocomplete="tel" required inputmode="tel" maxlength="25" placeholder="Tu número de contacto">
+            </label>
+
+            <label id="edad-wrap">Edad
+              <input name="edad" id="edad" type="number" min="18" max="100" required placeholder="Edad (18 o más)">
+            </label>
+
+            <label id="puesto-wrap" class="full-width" hidden>¿Qué tipo de trabajo buscas?
+              <select name="puesto" id="puesto">
+                <option value="">Selecciona una opción</option>
+                <option>Empaque y organización</option>
+                <option>Clasificación de productos</option>
+                <option>Trabajo desde casa</option>
+                <option>Otra opción</option>
+              </select>
+            </label>
+
+            <label id="monto-wrap" class="full-width" hidden>¿Qué cantidad de crédito te interesa?
+              <select name="monto" id="monto">
+                <option value="">Selecciona una cantidad</option>
+                <option>$1.000 a $5.000 pesos</option>
+                <option>$5.001 a $10.000 pesos</option>
+                <option>$10.001 a $25.000 pesos</option>
+                <option>Más de $25.000 pesos</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" name="consentimiento" required>
+            <span>Confirmo que los datos que escribí son correctos y acepto que se utilicen para dar seguimiento a esta solicitud.</span>
+          </label>
+
+          <button class="primary-button submit-button" type="submit">Revisar solicitud</button>
+          <p class="form-disclaimer">Esta demostración valida el formulario en tu navegador, pero todavía no transmite datos ni crea una solicitud real.</p>
+        </form>
+
+        <div id="success-message" class="success-message" role="status" hidden>
+          <h3>¡Formulario validado!</h3>
+          <p id="success-copy"></p>
+          <p>Para recibir solicitudes de verdad, conecta este formulario a un servicio seguro de recepción de datos.</p>
+          <button class="secondary-button" id="nuevo" type="button">Volver al inicio</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>BodegaMX</strong> · Servicios de empleo y crédito</p>
+    <p class="footer-small">Información orientativa. Verifica las condiciones, la empresa responsable y cualquier oferta antes de compartir información personal o tomar una decisión financiera.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
