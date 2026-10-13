@@ -1,437 +1,61 @@
-* {
-  box-sizing: border-box;
-}
-
-:root {
-  --green: #1d6b35;
-  --green-dark: #15552a;
-  --orange: #e95d0f;
-  --cream: #f5f3ec;
-  --ink: #29231f;
-  --muted: #77736d;
-  --line: #e2e1d9;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 100px;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--cream);
-  color: var(--ink);
-  line-height: 1.55;
-}
-
-button, input, select {
-  font: inherit;
-}
-
-button, a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-.topbar {
-  min-height: 90px;
-  padding: 14px clamp(16px, 5vw, 36px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  background: #f8f7f1;
-  border-bottom: 1px solid var(--line);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 13px;
-  color: var(--ink);
-  text-decoration: none;
-  font-size: clamp(21px, 4vw, 30px);
-  font-weight: 700;
-}
-
-.brand-icon {
-  display: grid;
-  place-items: center;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: var(--green);
-  font-size: 27px;
-}
-
-.header-cta {
-  background: var(--green);
-  color: white;
-  padding: 13px 20px;
-  border-radius: 14px;
-  text-decoration: none;
-  font-weight: 700;
-  text-align: center;
-}
-
-.header-cta:hover, .primary-button:hover {
-  background: var(--green-dark);
-}
-
-.hero {
-  text-align: center;
-  padding: clamp(45px, 8vw, 78px) 20px 48px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.eyebrow {
-  color: var(--green);
-  letter-spacing: 2px;
-  font-weight: 700;
-  font-size: 13px;
-  margin: 0 0 12px;
-}
-
-h1 {
-  font-size: clamp(38px, 8vw, 72px);
-  line-height: 1.08;
-  margin: 0 auto 26px;
-  letter-spacing: -1.5px;
-}
-
-h1 span {
-  display: inline-block;
-  color: var(--green);
-}
-
-.hero-copy {
-  max-width: 690px;
-  margin: 0 auto 42px;
-  color: var(--muted);
-  font-size: clamp(18px, 3.7vw, 27px);
-}
-
-.salary-card {
-  max-width: 630px;
-  margin: 0 auto;
-  padding: 32px 22px;
-  border: 1px solid #deddd5;
-  border-radius: 28px;
-  background: white;
-  box-shadow: 0 12px 28px rgba(43, 38, 28, .07);
-}
-
-.card-label {
-  color: var(--muted);
-  font-size: 17px;
-  letter-spacing: 1.5px;
-  font-weight: 700;
-  margin: 0;
-}
-
-.salary-amount {
-  color: #d65a22;
-  font-size: clamp(34px, 7vw, 54px);
-  font-weight: 700;
-  margin: 8px 0 0;
-}
-
-.card-foot {
-  color: var(--muted);
-  margin: 4px 0 0;
-  font-size: 15px;
-}
-
-.prompt {
-  color: var(--muted);
-  font-size: 20px;
-  margin: 56px 0 0;
-}
-
-.down-arrow {
-  display: inline-block;
-  color: var(--orange);
-  text-decoration: none;
-  font-size: 43px;
-  line-height: 1;
-  margin: 14px 0 0;
-}
-
-.section-wrap {
-  padding: 35px 20px 65px;
-  max-width: 1050px;
-  margin: 0 auto;
-}
-
-.services h2, .form-panel h2 {
-  font-size: clamp(30px, 5vw, 42px);
-  text-align: center;
-  line-height: 1.15;
-  margin: 0 0 12px;
-}
-
-.section-intro {
-  color: var(--muted);
-  text-align: center;
-  margin: 0 auto 28px;
-  max-width: 650px;
-}
-
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-  margin-top: 28px;
-}
-
-.service-card {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  padding: 28px;
-  box-shadow: 0 8px 24px rgba(43, 38, 28, .05);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.service-icon {
-  width: 66px;
-  height: 66px;
-  display: grid;
-  place-items: center;
-  border-radius: 19px;
-  background: #e8f2e9;
-  font-size: 34px;
-}
-
-.credit .service-icon {
-  background: #fff0e5;
-}
-
-.service-card h3 {
-  font-size: 28px;
-  margin: 15px 0 6px;
-}
-
-.service-card p {
-  color: var(--muted);
-  margin: 0 0 12px;
-}
-
-.service-card ul {
-  padding-left: 21px;
-  margin: 0 0 25px;
-}
-
-.service-card li {
-  margin: 6px 0;
-}
-
-.primary-button, .secondary-button {
-  border: 0;
-  border-radius: 13px;
-  padding: 15px 20px;
-  cursor: pointer;
-  font-weight: 700;
-  min-height: 52px;
-}
-
-.primary-button {
-  background: var(--green);
-  color: #fff;
-  width: 100%;
-  margin-top: auto;
-}
-
-.credit .primary-button {
-  background: var(--orange);
-}
-
-.credit .primary-button:hover {
-  background: #c94c08;
-}
-
-.security-note {
-  margin: 28px auto 0;
-  padding: 16px 18px;
-  border-left: 4px solid #dca344;
-  border-radius: 8px;
-  background: #fff8e9;
-  color: #63533b;
-  font-size: 14px;
-}
-
-.form-section {
-  padding: 20px 16px 65px;
-}
-
-.form-panel {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: clamp(22px, 5vw, 40px);
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(43, 38, 28, .06);
-}
-
-.back-button {
-  border: 0;
-  background: transparent;
-  color: var(--green);
-  padding: 8px 0;
-  cursor: pointer;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.form-panel .eyebrow {
-  text-align: center;
-}
-
-.field-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 17px;
-}
-
-.field-grid label {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.field-grid input, .field-grid select {
-  width: 100%;
-  min-height: 49px;
-  padding: 12px;
-  border: 1px solid #d7d5cd;
-  border-radius: 10px;
-  background: #fff;
-  color: var(--ink);
-}
-
-.field-grid input:focus, .field-grid select:focus {
-  outline: 2px solid #a4c9ab;
-  border-color: var(--green);
-}
-
-.full-width {
-  grid-column: 1 / -1;
-}
-
-.consent {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin: 22px 0;
-  font-size: 13px;
-  color: #625f59;
-}
-
-.consent input {
-  margin-top: 4px;
-  min-width: 18px;
-  min-height: 18px;
-}
-
-.submit-button {
-  margin-top: 0;
-}
-
-.form-disclaimer {
-  color: var(--muted);
-  font-size: 12px;
-  text-align: center;
-  margin: 14px 0 0;
-}
-
-.success-message {
-  margin-top: 24px;
-  background: #edf7ee;
-  border: 1px solid #c4e1c8;
-  border-radius: 14px;
-  padding: 22px;
-  text-align: center;
-}
-
-.success-message h3 {
-  margin-top: 0;
-  color: var(--green-dark);
-}
-
-.secondary-button {
-  background: #e5eee6;
-  color: var(--green-dark);
-}
-
-footer {
-  padding: 28px 20px;
-  text-align: center;
-  background: #eeece4;
-  color: #5d5952;
-}
-
-footer p {
-  margin: 5px auto;
-}
-
-.footer-small {
-  max-width: 760px;
-  font-size: 12px;
-}
-
-[hidden] {
-  display: none !important;
-}
-
-@media (max-width: 650px) {
-  .topbar {
-    min-height: 78px;
-    padding: 10px 14px;
-  }
-
-  .brand {
-    gap: 9px;
-  }
-
-  .brand-icon {
-    width: 48px;
-    height: 48px;
-    font-size: 23px;
-  }
-
-  .header-cta {
-    padding: 11px 13px;
-    border-radius: 11px;
-    font-size: 14px;
-  }
-
-  .hero {
-    padding-top: 43px;
-  }
-
-  .salary-card {
-    border-radius: 23px;
-    padding: 26px 15px;
-  }
-
-  .service-grid, .field-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .service-card {
-    padding: 23px;
-  }
-
-  .full-width {
-    grid-column: auto;
-  }
-}
+*{box-sizing:border-box}
+:root{--verde:#1d6b35;--verde-oscuro:#15552a;--naranja:#e95d0f;--crema:#f5f3ec;--texto:#29231f;--gris:#77736d;--borde:#e2e1d9}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--crema);color:var(--texto);line-height:1.55}
+button,input{font:inherit}
+.header{min-height:82px;padding:12px clamp(16px,4vw,32px);display:flex;align-items:center;justify-content:space-between;gap:12px;background:#f8f7f1;border-bottom:1px solid var(--borde);position:sticky;top:0;z-index:5}
+.logo-area,.footer-logo{display:flex;align-items:center;gap:12px;color:var(--texto);text-decoration:none;font-size:clamp(21px,4vw,29px)}
+.logo-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:50%;background:var(--verde);font-size:25px}
+.top-button{background:var(--verde);color:#fff;border:0;border-radius:13px;padding:13px 18px;font-weight:bold;cursor:pointer}
+.pantalla{display:none;min-height:60vh;padding:28px 16px 55px}
+.pantalla.activa{display:block;animation:entrada .2s ease}
+@keyframes entrada{from{opacity:.4;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.hero{max-width:760px;margin:0 auto;text-align:center;padding:32px 4px 42px}
+.disponible{display:inline-flex;align-items:center;gap:8px;background:#e5f1e6;color:var(--verde);padding:8px 13px;border-radius:30px;font-size:14px;font-weight:bold}
+.disponible span{width:8px;height:8px;border-radius:50%;background:#2c9b4a}
+h1{font-size:clamp(39px,8vw,65px);line-height:1.08;letter-spacing:-1.5px;margin:24px 0}
+h1 strong{display:block;color:var(--verde)}
+.descripcion{font-size:clamp(18px,4vw,25px);color:var(--gris);max-width:650px;margin:0 auto 34px}
+.salario{background:#fff;border:1px solid var(--borde);border-radius:24px;padding:27px 17px;box-shadow:0 10px 25px #29231f0d}
+.salario-titulo{font-size:16px;letter-spacing:1.3px;color:var(--gris);font-weight:bold}
+.salario-cantidad{font-size:clamp(29px,7vw,43px);font-weight:bold;color:#d65a22;margin:8px 0}
+.salario-sub{color:var(--gris);font-size:14px}
+.texto-postular{color:var(--gris);font-size:19px;margin:38px 0 16px}
+.servicios{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:600px;margin:auto}
+.boton{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;min-height:52px;padding:14px 18px;border:0;border-radius:12px;text-decoration:none;text-align:center;font-weight:bold;font-size:16px;cursor:pointer}
+.naranja{background:var(--naranja);color:#fff}.naranja:hover{background:#c94c08}
+.credito-link{background:var(--verde);color:#fff}.credito-link:hover,.verde:hover{background:var(--verde-oscuro)}
+.info-inicio,.como-funciona{max-width:980px;margin:0 auto;padding:35px 18px 55px}
+.info-inicio-titulo,.como-funciona h2{text-align:center;font-size:clamp(27px,5vw,36px);margin:0 0 25px}
+.info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.info-card{display:flex;gap:14px;align-items:flex-start;padding:19px;background:#fff;border:1px solid var(--borde);border-radius:17px}
+.info-icon{font-size:27px}.info-card h3,.paso-info h3{margin:0 0 5px;font-size:18px}.info-card p,.paso-info p{margin:0;color:var(--gris);font-size:14px}
+.como-funciona{padding-top:10px}.como-funciona-intro{text-align:center;color:var(--gris);margin:-12px auto 25px}
+.pasos-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.paso-info{position:relative;text-align:center;background:#fff;border:1px solid var(--borde);border-radius:17px;padding:24px 14px 19px}
+.paso-numero{position:absolute;left:10px;top:10px;width:27px;height:27px;display:grid;place-items:center;border-radius:50%;background:#e5f1e6;color:var(--verde);font-weight:bold}
+.paso-icono{font-size:29px;margin-bottom:9px}
+.tarjeta{max-width:540px;margin:20px auto 0;padding:clamp(22px,5vw,36px);background:#fff;border:1px solid var(--borde);border-radius:23px;box-shadow:0 10px 30px #29231f0b}
+.tarjeta h2{text-align:center;font-size:clamp(27px,5vw,35px);line-height:1.2;margin:8px 0 10px}
+.subtitulo{text-align:center;color:var(--gris);margin:0 auto 24px}
+.paso-etiqueta{text-align:center;font-size:12px;letter-spacing:1.6px;color:var(--verde);font-weight:bold}
+.tarjeta form{display:flex;flex-direction:column}
+.tarjeta label{font-size:14px;font-weight:bold;margin:14px 0 6px}
+.tarjeta input{width:100%;min-height:48px;border:1px solid #d7d5cd;border-radius:10px;padding:12px;background:#fff;color:var(--texto)}
+.tarjeta input:focus{outline:2px solid #a4c9ab;border-color:var(--verde)}
+.tarjeta form .boton{margin-top:23px}
+.nota-privacidad{font-size:12px;color:var(--gris);margin-bottom:0}
+.pregunta{text-align:center}.icono{font-size:35px;text-align:center;margin-bottom:10px}.pregunta>p{color:var(--gris)}
+.opciones{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px}
+.opcion{min-height:54px;border:1px solid var(--verde);border-radius:12px;background:#fff;color:var(--verde);font-weight:bold;cursor:pointer}
+.opcion:hover{background:#eaf4eb}
+.mensaje-info{padding:17px 18px;background:#fff7e6;border-left:4px solid #e4b04e;border-radius:9px;color:#554831;margin:20px 0}
+.mensaje-info p{margin:0 0 12px}.mensaje-info p:last-child{margin-bottom:0}
+.resumen{font-size:14px;color:var(--gris);margin:18px 0}
+.mensaje-final{padding:15px;background:#eaf5eb;border-radius:10px;color:var(--verde-oscuro);font-size:14px}
+.boton-secundario{margin-top:12px;background:#eeece4;color:var(--texto)}
+footer{text-align:center;padding:28px 18px;background:#eeece4;color:#5d5952}
+.footer-logo{justify-content:center;font-size:19px}.footer-logo .logo-icon{width:37px;height:37px;font-size:19px}
+footer p{margin:9px auto}.footer-small{font-size:12px;max-width:720px}
+@media(max-width:650px){.header{min-height:74px;padding:10px 13px}.logo-icon{width:46px;height:46px;font-size:22px}.top-button{padding:11px 13px;font-size:14px}.hero{padding-top:25px}.servicios{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr}.pasos-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pantalla{padding-left:13px;padding-right:13px}.salario{padding:23px 13px}}
+@media(max-width:380px){.pasos-grid{grid-template-columns:1fr}.logo-area{gap:8px}}
