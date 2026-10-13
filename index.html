@@ -57,74 +57,301 @@
     </div>
   </section>
 
-  <section id="paso-1" class="pantalla">
-    <div class="tarjeta">
-      <div class="paso-etiqueta">PASO 1 DE 4</div>
-      <h2>¡Postúlate ahora!</h2>
-      <p class="subtitulo">Completa tus datos para continuar con la postulación.</p>
-      <form id="form-demo">
-        <label for="nombre">Nombre completo</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Ej.: María García" autocomplete="name" required maxlength="100">
-        <label for="telefono">Teléfono o WhatsApp</label>
-        <input type="tel" id="telefono" name="telefono" placeholder="Tu número de contacto" autocomplete="tel" required maxlength="25">
-        <label for="ciudad">Ciudad</label>
-        <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad donde vives" autocomplete="address-level2" required maxlength="100">
-        <label for="direccion">Dirección (opcional)</label>
-        <input type="text" id="direccion" name="direccion" placeholder="No incluyas datos que no sean necesarios" autocomplete="street-address" maxlength="180">
-        <button type="submit" class="boton verde">Continuar <span>→</span></button>
-      </form>
-      <p class="nota-privacidad">Comparte solo los datos necesarios. No envíes documentos de identidad ni datos bancarios en esta etapa.</p>
-    </div>
-  </section>
+  <!-- =========================
+             PASO 1 - DATOS DEMO
+        ========================== -->
+        <section id="paso-1" class="pantalla">
 
-  <section id="paso-2" class="pantalla">
-    <div class="tarjeta pregunta">
-      <div class="icono">☎️</div><div class="paso-etiqueta">PASO 2 DE 4</div>
-      <h2>Una pregunta importante</h2>
-      <p>¿Estás de acuerdo en que te contacten por teléfono para hablar sobre una posible entrevista?</p>
-      <div class="opciones">
-        <button class="opcion" type="button" onclick="guardarContacto('Sí')">Sí</button>
-        <button class="opcion" type="button" onclick="guardarContacto('No')">No</button>
-      </div>
-    </div>
-  </section>
+            <div class="tarjeta">
 
-  <section id="paso-3" class="pantalla">
-    <div class="tarjeta">
-      <div class="icono">📆</div><div class="paso-etiqueta">PASO 3 DE 4</div>
-      <h2>Disponibilidad para entrevista</h2>
-      <p class="subtitulo">Si quieres, indica un horario en el que puedan contactarte.</p>
-      <form id="form-entrevista">
-        <label for="fecha">Fecha preferida (opcional)</label>
-        <input type="date" id="fecha" name="fecha">
-        <label for="hora">Hora preferida (opcional)</label>
-        <input type="time" id="hora" name="hora">
-        <button type="submit" class="boton verde">Continuar <span>→</span></button>
-      </form>
-    </div>
-  </section>
+                <h2>¡Postúlate ahora!</h2>
 
-  <section id="paso-4" class="pantalla">
-    <div class="tarjeta">
-      <div class="icono">✅</div><div class="paso-etiqueta">PASO 4 DE 4</div>
-      <h2>Revisa antes de continuar</h2>
-      <div class="mensaje-info">
-        <p><strong>Importante:</strong> antes de aceptar una oferta, verifica el nombre legal de la empresa, las funciones, el salario, el horario y las condiciones de contratación.</p>
-        <p>No pagues por conseguir un empleo ni abras una cuenta bancaria por presión o como condición no verificada para obtener el puesto. Nunca compartas claves, códigos de seguridad ni capturas que muestren información bancaria.</p>
-      </div>
-      <div class="resumen" id="resumen"></div>
-      <button class="boton verde" type="button" onclick="finalizarPostulacion()">Finalizar demostración <span>✓</span></button>
-      <p id="mensaje-final" class="mensaje-final" role="status" hidden>Los datos se revisaron en esta página, pero aún no se han enviado a ninguna empresa. Para recibir postulaciones reales, conecta el formulario a un servicio seguro.</p>
-      <button class="boton boton-secundario" type="button" onclick="irAPaso(0)">Volver al inicio</button>
-    </div>
-  </section>
-</main>
+                <p class="subtitulo">
+                    Completa tus datos y te contactaremos pronto.
+                </p>
 
-<footer>
-  <div class="footer-logo"><span class="logo-icon">📦</span><strong>BodegaMX</strong></div>
-  <p>© 2026 BodegaMX. Todos los derechos reservados.</p>
-  <p class="footer-small">Esta página es una interfaz de demostración. Verifica las ofertas y sus condiciones antes de compartir información personal.</p>
-</footer>
-<script src="script.js"></script>
+                <form id="form-demo">
+
+                    <label>
+                        Nombre completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Ej: María García"
+                        autocomplete="off"
+                        required
+                    >
+
+
+                    <label>
+                        Teléfono o WhatsApp
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefono"
+                        placeholder="Ej: 555 123 4567"
+                        autocomplete="off"
+                        required
+                    >
+
+
+                    
+
+                    <label>
+                        Ciudad
+                    </label>
+
+                    <input
+                        type="text"
+                        id="ciudad"
+                        placeholder="Ej: Ciudad de México"
+                        autocomplete="off"
+                        required
+                    >
+
+
+                    <label>
+                        Dirección
+                    </label>
+
+                    <input
+                        type="text"
+                        id="direccion"
+                        placeholder="Ej: Calle 10 #20-30"
+                        autocomplete="street-address"
+                        required
+                    >
+
+
+                    <button
+                        type="submit"
+                        class="boton verde"
+                    >
+                        Continuar
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PASO 2 - PREGUNTA
+        ========================== -->
+        <section id="paso-2" class="pantalla">
+
+            <div class="tarjeta pregunta">
+
+                <div class="icono">
+                    ☎
+                </div>
+
+                <h2>
+                    Una pregunta importante
+                </h2>
+
+                <p>
+                    ¿Estás de acuerdo en que te llamemos
+                    para una entrevista por teléfono?
+                </p>
+
+                <div class="opciones">
+
+                    <button
+                        class="opcion"
+                        onclick="irAPaso(3)"
+                    >
+                        SI
+                    </button>
+
+                    <button
+                        class="opcion"
+                        onclick="irAPaso(3)"
+                    >
+                        NO
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PASO 3 - ENTREVISTA
+        ========================== -->
+        <section id="paso-3" class="pantalla">
+
+            <div class="tarjeta">
+
+                <div class="icono">
+                    📆
+                </div>
+
+                <h2>
+                    Entrevista de empleo
+                </h2>
+
+                <p class="subtitulo">
+                    Selecciona una fecha y hora para continuar.
+                </p>
+
+                <div class="bloque-gris">
+
+                    <h3>
+                        ¿Qué día y hora estás disponible?
+                    </h3>
+
+                    <label>
+                        Fecha
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fecha"
+                    >
+
+                    <label>
+                        Hora
+                    </label>
+
+                    <input
+                        type="time"
+                        id="hora"
+                    >
+
+                </div>
+
+                <button
+                    class="boton verde"
+                    onclick="irAPaso(4)"
+                >
+                    Enviar
+                    <span>→</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+     PASO 4 - CUENTA BANCARIA
+========================== -->
+<section id="paso-4" class="pantalla">
+
+    <div class="tarjeta cuenta-bancaria">
+
+        <h2>
+            Cuenta bancaria
+        </h2>
+
+        <p class="pregunta-banco">
+            ¿Tienes cuenta de banco Santander likeU?
+        </p>
+
+        <div class="opciones banco-opciones">
+
+            <button
+                type="button"
+                class="opcion"
+                onclick="mostrarMensajeBanco()"
+            >
+                No
+            </button>
+
+            <button
+                type="button"
+                class="opcion"
+                onclick="mostrarMensajeBanco()"
+            >
+                Sí
+            </button>
+<!-- CONTENIDO QUE APARECE AL PRESIONAR SÍ O NO -->
+<div id="contenido-final-banco" class="contenido-final-banco">
+
+    <!-- RECUADRO AMARILLO -->
+    <div class="mensaje-banco">
+
+        <p>
+            <strong>Importante:</strong>
+            Es necesario que tengas tu cuenta de Santander likeU, ya que la empresa tiene convenio exclusivo con este banco.
+        </p>
+
+        <p>
+            Pero no te preocupes, como estás postulándote con nosotros, te ayudaremos a solicitarla ahora mismo para que no pierdas el puesto de trabajo, ya que es requisito de la empresa para la postulación.
+        </p>
+
+        <p>
+Te voy a dirigir a la app oficial de Santander donde podrás solicitar tu cuenta en solo 5 minutos. Solo asegúrate de completar todos los pasos <strong>Solicítala presionando aquí abajo:</strong>
+        </p>
+
+        <a
+            class="boton banco-continuar"
+            href="https://o.uvixs.com//tr?offer_id=1&aff_id=14"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Solicitar cuenta
+            <span>→</span>
+        </a>
+
+    </div>
+
+    <!-- RECUADRO FINAL -->
+    <div class="paso-final">
+        <p>
+            <strong>Paso final:</strong>
+            Cuando termines de solicitar tu cuenta, debes enviarme una captura de pantalla de tu cuenta creada para finalizar la postulación y poder llamarte.
+
+        </p>
+
+        <p>
+           
+
+La captura de pantalla debes enviarla aquí abajo:
+        </p>
+    </div>
+
+</div>
+        </div>
+
+
+        <!-- MENSAJE AMARILLO -->
+       
+
+    </div>
+
+</section>
+
+
+        
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <div class="footer-logo">
+            <div class="logo-icon">📦</div>
+            <strong>BodegaMX</strong>
+        </div>
+
+        <p>
+            © 2026 Bodegamx. Todos los derechos reservados.
+        </p>
+    </footer>
+
+
+    <!-- IMPORTANTE: el archivo se llama exactamente script.js -->
+    <script src="script.js"></script>
+
 </body>
 </html>
