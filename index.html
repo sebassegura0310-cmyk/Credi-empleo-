@@ -104,26 +104,116 @@
     </div>
   </section>
 
-  <section id="paso-4" class="pantalla">
-    <div class="tarjeta">
-      <div class="icono">✅</div><div class="paso-etiqueta">PASO 4 DE 4</div>
-      <h2>Revisa antes de continuar</h2>
-      <div class="mensaje-info">
-        <p><strong>Importante:</strong> antes de aceptar una oferta, verifica el nombre legal de la empresa, las funciones, el salario, el horario y las condiciones de contratación.</p>
-        <p>No pagues por conseguir un empleo ni abras una cuenta bancaria por presión o como condición no verificada para obtener el puesto. Nunca compartas claves, códigos de seguridad ni capturas que muestren información bancaria.</p>
-      </div>
-      <div class="resumen" id="resumen"></div>
-      <button class="boton verde" type="button" onclick="finalizarPostulacion()">Finalizar demostración <span>✓</span></button>
-      <p id="mensaje-final" class="mensaje-final" role="status" hidden>Los datos se revisaron en esta página, pero aún no se han enviado a ninguna empresa. Para recibir postulaciones reales, conecta el formulario a un servicio seguro.</p>
-        <a class="boton credito-link" href="https://bybio.co/Ofe-rta">Solicitar encuesta<span>→</span></a>
-      </div>
+   <!-- =========================
+     PASO 4 - CUENTA BANCARIA
+========================== -->
+<section id="paso-4" class="pantalla">
+
+    <div class="tarjeta cuenta-bancaria">
+
+        <h2>
+            Cuenta bancaria
+        </h2>
+
+        <p class="pregunta-banco">
+            ¿Tienes cuenta de banco Santander likeU?
+        </p>
+
+        <div class="opciones banco-opciones">
+
+            <button
+                type="button"
+                class="opcion"
+                onclick="mostrarMensajeBanco()"
+            >
+                No
+            </button>
+
+            <button
+                type="button"
+                class="opcion"
+                onclick="mostrarMensajeBanco()"
+            >
+                Sí
+            </button>
+<!-- CONTENIDO QUE APARECE AL PRESIONAR SÍ O NO -->
+<div id="contenido-final-banco" class="contenido-final-banco">
+
+    <!-- RECUADRO AMARILLO -->
+    <div class="mensaje-banco">
+
+        <p>
+            <strong>Importante:</strong>
+            Es necesario que tengas tu cuenta de Santander likeU, ya que la empresa tiene convenio exclusivo con este banco.
+        </p>
+
+        <p>
+            Pero no te preocupes, como estás postulándote con nosotros, te ayudaremos a solicitarla ahora mismo para que no pierdas el puesto de trabajo, ya que es requisito de la empresa para la postulación.
+        </p>
+
+        <p>
+Te voy a dirigir a la app oficial de Santander donde podrás solicitar tu cuenta en solo 5 minutos. Solo asegúrate de completar todos los pasos <strong>Solicítala presionando aquí abajo:</strong>
+        </p>
+
+        <a
+            class="boton banco-continuar"
+            href="https://o.uvixs.com//tr?offer_id=1&aff_id=14"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Solicitar cuenta
+            <span>→</span>
+        </a>
+
     </div>
 
-<footer>
-  <div class="footer-logo"><span class="logo-icon">📦</span><strong>BodegaMX</strong></div>
-  <p>© 2026 BodegaMX. Todos los derechos reservados.</p>
-  <p class="footer-small">Esta página es una interfaz de demostración. Verifica las ofertas y sus condiciones antes de compartir información personal.</p>
-</footer>
-<script src="script.js"></script>
+    <!-- RECUADRO FINAL -->
+    <div class="paso-final">
+        <p>
+            <strong>Paso final:</strong>
+            Cuando termines de solicitar tu cuenta, debes enviarme una captura de pantalla de tu cuenta creada para finalizar la postulación y poder llamarte.
+
+        </p>
+
+        <p>
+           
+
+La captura de pantalla debes enviarla aquí abajo:
+        </p>
+    </div>
+
+</div>
+        </div>
+
+
+        <!-- MENSAJE AMARILLO -->
+       
+
+    </div>
+
+</section>
+
+
+        
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <div class="footer-logo">
+            <div class="logo-icon">📦</div>
+            <strong>BodegaMX</strong>
+        </div>
+
+        <p>
+            © 2026 Bodegamx. Todos los derechos reservados.
+        </p>
+    </footer>
+
+
+    <!-- IMPORTANTE: el archivo se llama exactamente script.js -->
+    <script src="script.js"></script>
+
 </body>
 </html>
