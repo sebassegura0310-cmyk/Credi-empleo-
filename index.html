@@ -1,138 +1,131 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#1d6b35">
-  <title>BodegaMX | Empleo y Crédito</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1877f2">
+  <title>Dimytro - Conecta con tus amigos</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="header">
-  <a class="logo-area" href="#inicio" aria-label="BodegaMX inicio">
-    <span class="logo-icon">📦</span><strong>BodegaMX</strong>
-  </a>
-  <button class="top-button" type="button" onclick="irAPaso(1)">Postularme</button>
-</header>
+  <header class="topbar">
+    <a class="brand" href="#" onclick="showTab('inicio');return false">Dimytro</a>
+    <input id="searchUsers" placeholder="Buscar personas..." aria-label="Buscar personas">
+    <button id="searchBtn" class="secondary">Buscar</button>
+    <button id="logoutBtn" class="secondary hidden">Salir</button>
+  </header>
 
-<main>
-  <section id="inicio" class="pantalla activa">
-    <div class="hero">
-      <div class="disponible"><span></span> Información de servicios</div>
-      <h1>Bienvenido a <strong>BodegaMX</strong></h1>
-      <p class="descripcion">Conoce nuestros servicios de empleo y crédito desde un mismo lugar.</p>
-
-      <div class="salario">
-        <div class="salario-titulo">OPORTUNIDAD DE EMPLEO</div>
-        <div class="salario-cantidad">$4,000 pesos semanales</div>
-        <div class="salario-sub">Confirma siempre por escrito el salario, las funciones y las condiciones con el empleador.</div>
+  <main>
+    <section id="authView" class="auth-card">
+      <h1>Bienvenido a Dimytro</h1>
+      <p>Conecta, comparte y conversa.</p>
+      <div class="tabs">
+        <button class="tab active" id="loginTab">Iniciar sesión</button>
+        <button class="tab" id="signupTab">Crear cuenta</button>
       </div>
-
-      <p class="texto-postular">Elige el servicio que necesitas</p>
-      <div class="servicios">
-        <button class="boton naranja" type="button" onclick="irAPaso(1)">Solicitar empleo <span>→</span></button>
-        <a class="boton credito-link" href="https://o.uvixs.com//tr?offer_id=13&aff_id=14">Solicitar crédito <span>→</span></a>
-      </div>
-    </div>
-
-    <div class="info-inicio">
-      <h2 class="info-inicio-titulo">¿Qué ofrece la opción de empleo?</h2>
-      <div class="info-grid">
-        <article class="info-card"><div class="info-icon">🕐</div><div><h3>Horario por confirmar</h3><p>Consulta los horarios y las condiciones antes de aceptar.</p></div></article>
-        <article class="info-card"><div class="info-icon">🛡️</div><div><h3>Proceso claro</h3><p>Revisa quién contrata y cómo se utilizarán tus datos.</p></div></article>
-        <article class="info-card"><div class="info-icon">🎓</div><div><h3>Orientación inicial</h3><p>Solicita información sobre capacitación y experiencia requerida.</p></div></article>
-        <article class="info-card"><div class="info-icon">📦</div><div><h3>Actividades</h3><p>Pregunta por las tareas, materiales, ubicación y modalidad del trabajo.</p></div></article>
-      </div>
-    </div>
-
-    <div class="como-funciona">
-      <h2>¿Cómo funciona?</h2>
-      <p class="como-funciona-intro">Sigue estos pasos para enviar tu postulación.</p>
-      <div class="pasos-grid">
-        <article class="paso-info"><div class="paso-numero">1</div><div class="paso-icono">📋</div><h3>Postúlate</h3><p>Completa tus datos básicos de contacto.</p></article>
-        <article class="paso-info"><div class="paso-numero">2</div><div class="paso-icono">☎️</div><h3>Confirma contacto</h3><p>Indica si aceptas que te contacten para conversar sobre el puesto.</p></article>
-        <article class="paso-info"><div class="paso-numero">3</div><div class="paso-icono">📆</div><h3>Disponibilidad</h3><p>Indica cuándo te pueden contactar para una entrevista.</p></article>
-        <article class="paso-info"><div class="paso-numero">4</div><div class="paso-icono">✅</div><h3>Revisa condiciones</h3><p>Confirma las condiciones con el empleador antes de aceptar.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section id="paso-1" class="pantalla">
-    <div class="tarjeta">
-      <div class="paso-etiqueta">PASO 1 DE 4</div>
-      <h2>¡Postúlate ahora!</h2>
-      <p class="subtitulo">Completa tus datos para continuar con la postulación.</p>
-      <form id="form-demo">
-        <label for="nombre">Nombre completo</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Ej.: María García" autocomplete="name" required maxlength="100">
-        <label for="telefono">Teléfono o WhatsApp</label>
-        <input type="tel" id="telefono" name="telefono" placeholder="Tu número de contacto" autocomplete="tel" required maxlength="25">
-        <label for="ciudad">Ciudad</label>
-        <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad donde vives" autocomplete="address-level2" required maxlength="100">
-        <label for="direccion">Dirección (opcional)</label>
-        <input type="text" id="direccion" name="direccion" placeholder="No incluyas datos que no sean necesarios" autocomplete="street-address" maxlength="180">
-        <button type="submit" class="boton verde">Continuar <span>→</span></button>
+      <form id="authForm">
+        <label id="nameLabel" class="hidden">Nombre completo
+          <input id="fullName" maxlength="80" autocomplete="name">
+        </label>
+        <label>Correo electrónico
+          <input id="email" type="email" required autocomplete="email">
+        </label>
+        <label>Contraseña
+          <input id="password" type="password" required minlength="6" autocomplete="current-password">
+        </label>
+        <button id="authSubmit" class="primary full">Iniciar sesión</button>
       </form>
-      <p class="nota-privacidad">Comparte solo los datos necesarios. No envíes documentos de identidad ni datos bancarios en esta etapa.</p>
-    </div>
-  </section>
+      <p id="authMessage" class="message" role="status"></p>
+      <p class="small">Al crear una cuenta, usa un correo al que puedas acceder.</p>
+    </section>
 
-  <section id="paso-2" class="pantalla">
-    <div class="tarjeta pregunta">
-      <div class="icono">☎️</div><div class="paso-etiqueta">PASO 2 DE 4</div>
-      <h2>Una pregunta importante</h2>
-      <p>¿Estás de acuerdo en que te contacten por teléfono para hablar sobre una posible entrevista?</p>
-      <div class="opciones">
-        <button class="opcion" type="button" onclick="guardarContacto('Sí')">Sí</button>
-        <button class="opcion" type="button" onclick="guardarContacto('No')">No</button>
-      </div>
-    </div>
-  </section>
+    <section id="appView" class="hidden">
+      <nav class="nav">
+        <button data-tab="inicio" class="nav-btn active">Inicio</button>
+        <button data-tab="perfil" class="nav-btn">Mi perfil</button>
+        <button data-tab="amigos" class="nav-btn">Amigos</button>
+        <button data-tab="mensajes" class="nav-btn">Mensajes</button>
+      </nav>
 
-  <section id="paso-3" class="pantalla">
-    <div class="tarjeta">
-      <div class="icono">📆</div><div class="paso-etiqueta">PASO 3 DE 4</div>
-      <h2>Disponibilidad para entrevista</h2>
-      <p class="subtitulo">Si quieres, indica un horario en el que puedan contactarte.</p>
-      <form id="form-entrevista">
-        <label for="fecha">Fecha preferida (opcional)</label>
-        <input type="date" id="fecha" name="fecha">
-        <label for="hora">Hora preferida (opcional)</label>
-        <input type="time" id="hora" name="hora">
-        <button type="submit" class="boton verde">Continuar <span>→</span></button>
-      </form>
-    </div>
-  </section>
+      <section id="inicio" class="page">
+        <div class="card">
+          <h2>¿Qué quieres compartir?</h2>
+          <form id="postForm">
+            <textarea id="postText" maxlength="3000" placeholder="Escribe una publicación..." rows="3"></textarea>
+            <label class="file-label">Añadir una foto
+              <input id="postImage" type="file" accept="image/jpeg,image/png,image/webp">
+            </label>
+            <button class="primary" type="submit">Publicar</button>
+          </form>
+          <p id="postMessage" class="message" role="status"></p>
+        </div>
+        <h2>Últimas publicaciones</h2>
+        <div id="feed"><p class="muted">Inicia sesión para ver el contenido.</p></div>
+      </section>
 
-  <section id="paso-4" class="pantalla">
-    <div class="tarjeta">
-      <div class="icono">✅</div><div class="paso-etiqueta">PASO 4 DE 4</div>
-      <h2>!PARA FINALIZAR RESPONDE LA SIGUIENTE ENCUESTA!</h2>
-      <div class="mensaje-info">
-        <strong>Importante:</strong>
-            Es necesario responder la siguiente encuesta en (Ipsos) para finalizar la postulación no tardarás en realizarla.
-        </p>
+      <section id="perfil" class="page hidden">
+        <div class="card">
+          <h2>Mi perfil</h2>
+          <form id="profileForm">
+            <label>Nombre completo
+              <input id="profileName" maxlength="80" required>
+            </label>
+            <label>Nombre de usuario
+              <input id="profileUsername" maxlength="30" pattern="[A-Za-z0-9_]+" required>
+            </label>
+            <label>Biografía
+              <textarea id="profileBio" maxlength="300" rows="3"></textarea>
+            </label>
+            <label>Foto de perfil
+              <input id="avatarFile" type="file" accept="image/jpeg,image/png,image/webp">
+            </label>
+            <label>Foto de portada
+              <input id="coverFile" type="file" accept="image/jpeg,image/png,image/webp">
+            </label>
+            <button class="primary" type="submit">Guardar perfil</button>
+          </form>
+          <p id="profileMessage" class="message" role="status"></p>
+          <div id="myProfile"></div>
+        </div>
+      </section>
 
-        <p>
-            Pero no te preocupes, como estás postulándote con nosotros, te ayudaremos a realizarla ahora mismo para que no pierdas la oportunidad, ya que es requisito de la empresa para la postulación.
-        </p>
+      <section id="amigos" class="page hidden">
+        <div class="card">
+          <h2>Solicitudes de amistad</h2>
+          <div id="requests"></div>
+        </div>
+        <div class="card">
+          <h2>Mis amigos</h2>
+          <div id="friends"></div>
+        </div>
+        <div class="card">
+          <h2>Personas en Dimytro</h2>
+          <div id="people"></div>
+        </div>
+      </section>
 
-        <p>
-Te voy a dirigir a la página oficial de IPsos donde podrás responder la encuesta en solo 5 minutos. Solo asegúrate de completar todos los pasos y llenar antes el formulario que ahí aparece: <strong>Solicítala presionando aquí abajo:</strong>
-        </p>
-      </div>
-      <div class="resumen" id="resumen"></div>
-      <button class="boton verde" type="button" onclick="finalizarPostulacion()">👇🏻✅👇🏻 <span>✓</span></button>
-      <p id="mensaje-final" class="mensaje-final" role="status" hidden>Los datos se revisaron en esta página, pero aún no se han enviado a ninguna empresa. Para recibir postulaciones real, conecta el formulario al servicio indicado en el siguiente botón.</p>
-      <a class="boton credito-link" href="https://o.uvixs.com//tr?offer_id=31&aff_id=14">ENCUESTA AQUI <span>→</span></a>
-      </div>
-    </div>
+      <section id="mensajes" class="page hidden">
+        <div class="card">
+          <h2>Mensajes privados</h2>
+          <label>Selecciona una persona
+            <select id="messagePerson">
+              <option value="">Elige un usuario</option>
+            </select>
+          </label>
+          <div id="chat" class="chat"></div>
+          <form id="messageForm" class="message-form">
+            <input id="messageText" maxlength="3000" placeholder="Escribe un mensaje..." required>
+            <button class="primary" type="submit">Enviar</button>
+          </form>
+          <p id="messageStatus" class="message" role="status"></p>
+        </div>
+      </section>
+      <p id="globalMessage" class="message" role="status"></p>
+    </section>
+  </main>
 
-<footer>
-  <div class="footer-logo"><span class="logo-icon">📦</span><strong>BodegaMX</strong></div>
-  <p>© 2026 BodegaMX. Todos los derechos reservados.</p>
-  <p class="footer-small">Esta página es una interfaz de demostración. Verifica las ofertas y sus condiciones antes de compartir información personal.</p>
-</footer>
-<script src="script.js"></script>
+  <footer>Dimytro © 2026 · Conecta con respeto.</footer>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
