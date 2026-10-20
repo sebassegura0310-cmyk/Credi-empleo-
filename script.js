@@ -3,7 +3,7 @@ import { createClient } from
   "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
 // REEMPLAZA ESTOS DOS VALORES CON LOS DE TU PROYECTO SUPABASE.
-const SUPABASE_URL = "https://mljejvbrjggjncafuqto.supabase.co/rest/v1/";
+const SUPABASE_URL = "https://mljejvbrjggjncafuqto.supabase.co";
 const SUPABASE_KEY = "sb_publishable_mSF8DF9RWAeofaqVyUBRgA_jJ932Xwq";
 
 const configured =
