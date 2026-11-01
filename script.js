@@ -2,7 +2,7 @@ import { createClient } from
   "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
 const SUPABASE_URL = "https://mljejvbrjggjncafuqto.supabase.co";
-const SUPABASE_KEY = "sb_publishable_mSF8DF9RWAeofaqVyUBRgA_j932Xwq";
+const SUPABASE_KEY = "sb_publishable_mSF8DF9RWAeofaqVyUBRgA_jJ932Xwq";
 
 const db = createClient(SUPABASE_URL, SUPABASE_KEY);
 
